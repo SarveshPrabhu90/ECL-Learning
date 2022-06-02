@@ -1,0 +1,6 @@
+{
+    "ecl.launchConfiguration": "localK8",
+    "ecl.targetCluster": {
+        "localK8": "thor"
+    }
+}
