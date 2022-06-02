@@ -11,7 +11,7 @@ IMPORT Python3 as Python;
 STRING tfInstallTest := EMBED(Python)
    
    import tensorflow as tf;
-   tfVersion = tf.__version__;
+   tfVersion = 'TF version: ' + tf.__version__;
    return tfVersion;
 
 ENDEMBED;
