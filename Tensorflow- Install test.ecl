@@ -5,14 +5,14 @@
         Use TensorFlow library via Python3 EMBED
         Print an output from TensorFlow 
 
- import tensorflow as tf;
-    tfVersion = tf.__version__;*/
+ */
 IMPORT Python3 as Python;
 
-INTEGER tfInstallTest := EMBED(Python)
+STRING tfInstallTest := EMBED(Python)
    
-    XDATA = 121;
-    return XDATA;
+   import tensorflow as tf;
+   tfVersion = tf.__version__;
+   return tfVersion;
 ENDEMBED;
 
 // Invoke EMBED
