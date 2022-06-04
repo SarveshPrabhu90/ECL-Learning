@@ -17,11 +17,11 @@ paitentSchema := RECORD
   String50 LastName,
   String30 City,
   String2 State,
-  String5 ZipCode   
+  String5 ZipCode
 END;
 
-patientDS := DATASET ([  {1, 'John', 'Britto', 'Suwanee', 'GA', '30024'},
-                          {2, 'Jack', 'Rat', 'Cumming', 'GA', '30041'},
+patientDS := DATASET ([  {1, 'Susan', 'Davis', 'Suwanee', 'GA', '30024'},
+                          {2, 'Jack', 'Meadows', 'Cumming', 'GA', '30041'},
                           {3, 'Sam', 'Mentos', 'Alpharetta', 'GA', '30005'},
                           {4, 'Zach', 'Beacham', 'Johns Creek', 'GA', '30021'},
                           {5, 'Malcom', 'Marshall', 'Johns Creek', 'GA', '30021'},
@@ -86,12 +86,18 @@ OUTPUT(patientVisitInfo);
 // Output select fields 
 //OUTPUT(patientVisitInfo, {ProviderID, PatientID, FirstName, LastName});
 
-// SORT functions 
+// SORT functions (default is ascending)
 patientVisitInfoSort1 := SORT(patientVisitInfo, ProviderID, LastName, FirstName);
-patientVisitInfoSort2 := SORT(patientVisitInfo, City, LastName);
+
+// Reverse Sort (decending) by LastName using "-"
+patientVisitInfoSort2 := SORT(patientVisitInfo, ProviderID, -LastName, FirstName);
+
+// Reverse Sort (decending) by City and LastName using "-"
+patientVisitInfoSort3 := SORT(patientVisitInfo, -City, -LastName);
 
 // Output select fields 
 OUTPUT(patientVisitInfoSort1, {ProviderID, LastName, FirstName, City, DateOfVisit, ReasonOfVisit, PatientID});
 
 OUTPUT(patientVisitInfoSort2, {ProviderID, LastName, FirstName, City, DateOfVisit, ReasonOfVisit, PatientID});
 
+OUTPUT(patientVisitInfoSort3, {ProviderID, LastName, FirstName, City, DateOfVisit, ReasonOfVisit, PatientID});

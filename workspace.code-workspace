@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"ecl.launchConfiguration": "localK8",
+		"ecl.targetCluster": {
+			"localK8": "thor",
+			"localK8 (ECL Learning)": "thor"
+		}
+	}
+}

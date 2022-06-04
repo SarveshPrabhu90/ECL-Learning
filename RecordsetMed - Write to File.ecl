@@ -19,8 +19,8 @@ paitentSchema := RECORD
   String5 ZipCode   
 END;
 
-patientDS := DATASET ([  {1, 'John', 'Britto', 'Suwanee', 'GA', '30024'},
-                          {2, 'Jack', 'Rat', 'Cumming', 'GA', '30041'},
+patientDS := DATASET ([  {1, 'Susan', 'Davis', 'Suwanee', 'GA', '30024'},
+                          {2, 'Jack', 'Meadows', 'Cumming', 'GA', '30041'},
                           {3, 'Sam', 'Mentos', 'Alpharetta', 'GA', '30005'},
                           {4, 'Zach', 'Beacham', 'Johns Creek', 'GA', '30021'},
                           {5, 'Malcom', 'Marshall', 'Johns Creek', 'GA', '30021'},

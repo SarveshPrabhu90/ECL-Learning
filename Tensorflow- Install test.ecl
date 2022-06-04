@@ -8,11 +8,14 @@
  */
 IMPORT Python3 as Python;
 
-STRING tfInstallTest := EMBED(Python)
+INTEGER tfInstallTest := EMBED(Python)
    
    import tensorflow as tf;
-   tfVersion = 'TF version: ' + tf.__version__;
-   return tfVersion;
+   x = 2;
+   y = 1;
+   addeddata = tf.add(x, y);
+   tfVersion = 'TF version: ' + tf.__version__ ;
+   return addeddata;
 
 ENDEMBED;
 

@@ -49,7 +49,7 @@ medFilr_csv_file_path_Thor := file_scope + '::' + project_scope + '::' + out_fil
 OUTPUT(patientVisitInfoSort1,,medFilr_csv_file_path_Thor,CSV,OVERWRITE);
 
 // Despray to landing zone 
-medFilr_csv_file_path_landingZone := 'C:\\hpccdata\\mydropzone\\patientVisitInfo_File_1.csv';
+medFilr_csv_file_path_landingZone := '/var/lib/HPCCSystems/mydropzone/patientVisitInfo_File_1.csv';
 
 STD.File.DeSpray(medFilr_csv_file_path_Thor, '10.0.0.199', medFilr_csv_file_path_landingZone, allowoverwrite:=TRUE);
                 
