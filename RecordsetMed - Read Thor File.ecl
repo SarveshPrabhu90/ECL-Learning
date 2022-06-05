@@ -19,7 +19,7 @@ patientVisitInfo_R1 := RECORD
   string5 Zipcode
  END;
  
- //Read the contents of the file 
+//Read the contents of the file 
 patientVisitInfo := DATASET('~ECL_Learning::MedFiles::in::patientVisitInfo_S1', patientVisitInfo_R1, THOR);
                    
 OUTPUT(patientVisitInfo);

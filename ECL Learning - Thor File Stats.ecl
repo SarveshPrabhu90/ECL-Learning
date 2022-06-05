@@ -3,15 +3,16 @@
     Learning File Statistics  
 */
 
+IMPORT $; 
 IMPORT STD; 
 
 // Using MODULE structure to return multiple values from a FUNCTION
 
 GetThorFileStats(VARSTRING medFileName) := FUNCTION
     result := MODULE
-        EXPORT RecordSize := STD.File.GetLogicalFileAttribute(medFileName,'recordSize');
-        EXPORT RecordCount := STD.File.GetLogicalFileAttribute(medFileName,'recordCount');
         EXPORT Size := STD.File.GetLogicalFileAttribute(medFileName,'size');
+        EXPORT RecordCount := STD.File.GetLogicalFileAttribute(medFileName,'recordCount');
+        EXPORT RecordSize := STD.File.GetLogicalFileAttribute(medFileName,'recordSize');
         EXPORT ClusterName := STD.File.GetLogicalFileAttribute(medFileName,'clusterName');
         EXPORT Directory := STD.File.GetLogicalFileAttribute(medFileName,'directory');
         EXPORT Numparts := STD.File.GetLogicalFileAttribute(medFileName,'numparts');
