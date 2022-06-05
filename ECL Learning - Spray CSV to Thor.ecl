@@ -3,7 +3,6 @@
         Spray a CSV file from the landing zone to Thor 
 */
 
-IMPORT $; 
 IMPORT STD;
 
 file_scope := '~ECL_Learning';
@@ -49,7 +48,7 @@ GetThorFileStats(file_name).CompressedSize;
 
 STD.File.VerifyFile(file_name, TRUE);
 
-// Read the CSV file into ECL RECORD  
+// Define an ECL RECORD to read the CSV file  
 patientInfoSchema := RECORD 
     STRING20 ID;
     STRING1 Gender;
@@ -81,3 +80,30 @@ DISTRIBUTE(patientInfo);
 patient_file_name := file_scope + '::' + project_scope + '::' + in_files_scope + '::PatientMaster';
 
 OUTPUT(patientInfo,,patient_file_name, THOR, COMPRESSED, OVERWRITE); 
+
+
+// Add UniqueID and DateAdded to each row in the file 
+
+// EXPORT UniqueInteger := STD.System.Util.GetUniqueInteger();
+
+// Define an ECL RECORD to read the CSV file  
+patientSchema := RECORD 
+    
+    STRING20 ID;
+    STRING1 Gender;
+    STRING10 Birthdate;
+    STRING30 Maiden_name;
+    STRING50 LastName;
+    STRING30 FirstName;
+    STRING100 Street;
+    STRING30 City;
+    STRING2 State;
+    STRING10 Zip;
+    STRING20 Phone;
+    STRING50 Email;
+    STRING40 CC_Type;
+    STRING50 CC_Number;
+    STRING10 CC_Cvc;
+    STRING10 CC_Expiry;
+END;
+
