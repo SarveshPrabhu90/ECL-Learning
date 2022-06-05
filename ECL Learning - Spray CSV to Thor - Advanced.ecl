@@ -1,7 +1,6 @@
 /* 
     Learning outcome 
         Spray a CSV file from the landing zone to Thor 
-
         Learn PARALLEL, INDEPENDENT, SEQUENTIAL, SprayDelimited, DISTRIBUTE
 */
 
