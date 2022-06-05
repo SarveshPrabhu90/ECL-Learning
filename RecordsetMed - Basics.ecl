@@ -11,6 +11,8 @@
         Observe the sorted results 
 */
 
+IMPORT STD; 
+
 paitentSchema := RECORD
   Integer5 PatientID,
   String25 FirstName,
@@ -83,9 +85,6 @@ patientVisitInfo := JOIN(patientVisitDS, patientDS,
 // Output entire dataset                          
 OUTPUT(patientVisitInfo);
 
-// Output select fields 
-//OUTPUT(patientVisitInfo, {ProviderID, PatientID, FirstName, LastName});
-
 // SORT functions (default is ascending)
 patientVisitInfoSort1 := SORT(patientVisitInfo, ProviderID, LastName, FirstName);
 
@@ -101,3 +100,5 @@ OUTPUT(patientVisitInfoSort1, {ProviderID, LastName, FirstName, City, DateOfVisi
 OUTPUT(patientVisitInfoSort2, {ProviderID, LastName, FirstName, City, DateOfVisit, ReasonOfVisit, PatientID});
 
 OUTPUT(patientVisitInfoSort3, {ProviderID, LastName, FirstName, City, DateOfVisit, ReasonOfVisit, PatientID});
+
+
