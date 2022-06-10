@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "localK8",
+            "name": "universityCluster",
             "type": "ecl",
             "request": "launch",
             "protocol": "http",
-            "serverAddress": "127.0.0.1",
+            "serverAddress": "university.us-hpccsystems-dev.azure.lnrsg.io",
             "port": 8010,
             "path": "",
             "targetCluster": "thor",
